@@ -1,20 +1,24 @@
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, File, Request, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 import numpy as np
 from io import BytesIO
 from PIL import Image
 import tensorflow as tf
+from fastapi.templating import Jinja2Templates
 
 # Load your model saved in .h5 format
-MODEL = tf.keras.models.load_model("../saved_models/1.h5")
+MODEL = tf.keras.models.load_model("../saved_models/50.h5")
 
 app = FastAPI()
+
 
 origins = [
     "http://localhost",
     "http://localhost:3000",
+    "http://localhost:5173",
 ]
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -25,6 +29,7 @@ app.add_middleware(
 )
 
 CLASS_NAMES = ["Early Blight", "Late Blight", "Healthy"]
+PLANT_TYPE = "Potato"  # This will be dynamic in future versions
 
 def read_file_as_image(data) -> np.ndarray:
     image = np.array(Image.open(BytesIO(data)))
@@ -41,6 +46,7 @@ async def predict(file: UploadFile = File(...)):
     confidence = np.max(predictions[0])
 
     return {
+        'plant_type': PLANT_TYPE,
         'class': predicted_class,
         'confidence': float(confidence)
     }
