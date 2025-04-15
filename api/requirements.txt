@@ -1,0 +1,9 @@
+fastapi==0.95.2
+uvicorn==0.22.0
+numpy==1.24.3
+pillow==10.0.1
+tensorflow-cpu==2.13.0
+python-multipart==0.0.6
+gunicorn==21.2.0
+python-dotenv==1.0.0
+typing-extensions==4.5.0
