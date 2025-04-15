@@ -2,29 +2,36 @@
 
 # Plant Disease Detection
 
-A web application that uses machine learning to detect diseases in plant leaves. Currently supports potato plant disease detection.
+A web application that uses machine learning to detect diseases in plant leaves. The system can identify various plant diseases and provide recommendations for treatment.
 
 ## Features
 
-- Upload images through drag & drop or file selection
-- Real-time disease detection
-- Confidence score for predictions
-- Responsive design
-- Support for multiple plant types 
+- Upload plant leaf images through drag & drop or file selection
+- Real-time disease detection using deep learning models
+- Detailed disease analysis with confidence scores
+- Treatment recommendations for identified diseases
+- Responsive web interface for both desktop and mobile
+- Support for multiple plant types and diseases
+- User-friendly dashboard for viewing results
 
 ## Tech Stack
 
 ### Frontend
-- React
-- Vite
-- Axios
-- CSS3
+- React 18.x
+- Vite 4.x
+- Axios for API calls
+- TailwindCSS for styling
+- React Router for navigation
+- React Dropzone for file uploads
 
 ### Backend
 - FastAPI
-- TensorFlow
-- Python 3.x
+- TensorFlow 2.x
+- Python 3.10+
 - Uvicorn
+- OpenCV for image processing
+- NumPy for numerical operations
+- Pandas for data handling
 
 ## Setup
 
@@ -74,23 +81,38 @@ The frontend will be running on http://localhost:5173
 
 1. Open the application in your browser
 2. Upload an image of a plant leaf
-3. Click "Submit Image" to analyze
-4. View the results showing plant type, disease status, and confidence level
+3. The system will automatically analyze the image
+4. View the results showing:
+   - Plant type
+   - Disease status
+   - Confidence level
+   - Treatment recommendations
+5. Save or share the results as needed
 
 ## Project Structure
 
 ```
 ├── api/                    # Backend directory
 │   ├── main.py            # FastAPI application
-│   └── requirements.txt    # Python dependencies
+│   ├── models/            # ML model files
+│   ├── utils/             # Utility functions
+│   └── requirements.txt   # Python dependencies
 ├── frontend/              # Frontend directory
 │   ├── src/              # Source files
 │   │   ├── components/   # React components
-│   │   └── App.jsx       # Main application component
-│   └── package.json      # Node.js dependencies
-└── saved_models/         # ML model directory
-    └── 50.h5            # Trained model
+│   │   ├── pages/       # Page components
+│   │   ├── assets/      # Static assets
+│   │   └── App.jsx      # Main application component
+│   └── package.json     # Node.js dependencies
+└── training/             # Training scripts and data
+    ├── data/            # Training datasets
+    └── notebooks/       # Jupyter notebooks
 ```
+
+## Datasets
+
+The model was trained using the following dataset:
+- [Plant Disease Classification Merged Dataset](https://www.kaggle.com/datasets/alinedobrovsky/plant-disease-classification-merged-dataset?resource=download) - A comprehensive dataset containing images of various plant diseases and healthy plants.
 
 ## Contributing
 
@@ -102,28 +124,32 @@ The frontend will be running on http://localhost:5173
 
 ## Project Overview
 
-This is an AI-Driven Vegetable Disease Recognition and Management Recommendations model. Discover the future of farming with our AI-powered website designed to recognize vegetable diseases with unprecedented accuracy. By identifying early signs of pest infestation to diagnosing nutrient deficiencies, the tool is an ultimate farming companion. By automated systems can effectively identify diseases and recommend solutions based on leaf images, providing farmers and agricultural experts with an efficient solution for crop monitoring and disease management.
+This is an AI-Driven Plant Disease Recognition and Management System. The application uses deep learning to identify plant diseases from leaf images with high accuracy. It provides farmers and agricultural experts with an efficient solution for crop monitoring and disease management.
 
 ### Problem Statement
 
-Vegetable crops are highly susceptible to a variety of diseases, significantly impacting yield and farmers' livelihoods. Traditional methods of disease detection are time-consuming, require expertise, and often result in late diagnosis. Leveraging AI technology can address this gap by providing real-time, reliable disease diagnostics. This project aims to develop an automated system to classify leaf images into different categories, including healthy and diseased conditions. The objective is to build a robust, efficient, and scalable solution to assist farmers and agricultural experts in detecting diseases accurately and early.
+Plant diseases significantly impact agricultural productivity and farmers' livelihoods. Traditional methods of disease detection are time-consuming, require expertise, and often result in late diagnosis. Our solution addresses this gap by providing real-time, reliable disease diagnostics through an automated system that classifies leaf images into different disease categories.
 
 ### Relevance
 
-This project is highly relevant for several reasons, particularly within the domains of agriculture, technology, and machine learning. Here are some key points highlighting its significance:
+This project is highly relevant for several reasons:
 
-#### Agricultural Importance
-- **Crop Yield**: Early detection and treatment of diseases can significantly improve yields of vegetables. Timely and accurate classification of diseases enables better disease management and prevention measures.
+#### Agricultural Impact
+- **Early Detection**: Enables timely intervention to prevent disease spread
+- **Yield Protection**: Helps maintain crop yields by identifying issues early
+- **Resource Optimization**: Reduces unnecessary pesticide use through accurate diagnosis
 
-#### Technological Advancement in Agriculture (Smart Farming)
-- **Automation**: Automating disease detection can reduce the dependency on human experts.
-- **Cost Efficiency**: Machine learning models offer a cost-effective solution compared to traditional lab tests or extensive manual inspections.
+#### Technological Innovation
+- **AI-Powered**: Uses state-of-the-art deep learning models for accurate classification
+- **Accessible**: Provides easy-to-use interface for farmers and experts
+- **Scalable**: Can be extended to support more plant types and diseases
 
-#### Deep Learning (CNN) for Image Classification
-- **High Accuracy**: By image classification tasks, making them suitable for identifying visual patterns in infected leaves.
+#### Environmental Benefits
+- **Sustainable Farming**: Promotes targeted treatment instead of blanket pesticide use
+- **Resource Conservation**: Helps optimize water and fertilizer usage
+- **Biodiversity Protection**: Reduces environmental impact of farming practices
 
-#### Environmental and Economic Impact
-- **Pesticide Reduction**: Accurate disease identification helps minimize the indiscriminate use of pesticides. Reducing crop losses due to diseases contributes to sustainable farming practices.
-
-#### Potential Use Cases
-- **Mobile Applications**: Apps that allow farmers to capture leaf images and get instant disease classifications.
+#### Future Applications
+- Mobile app integration for field use
+- Integration with agricultural IoT systems
+- Expansion to more plant species and diseases
