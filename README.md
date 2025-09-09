@@ -1,4 +1,4 @@
-# Plant Disease Detection
+# Crop Disease Detection
 
 A web application that uses machine learning to detect diseases in plant leaves. The system can identify various plant diseases and provide recommendations for treatment.
 
