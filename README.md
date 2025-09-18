@@ -25,7 +25,7 @@ A web application that uses machine learning to detect diseases in plant leaves.
 ### Backend
 - FastAPI
 - TensorFlow 2.x
-- Python 3.10+
+- Python 3.10+ (python 3.11 recommended)
 - Uvicorn
 - OpenCV for image processing
 - NumPy for numerical operations
