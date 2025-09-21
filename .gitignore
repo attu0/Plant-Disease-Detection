@@ -1,12 +1,29 @@
-# Python
+# Exclude the "Don't add me" folder
+Don't add me/
+
+# Exclude all .mp4 files
+*.mp4
+
+# Python cache files
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.pytest_cache/
+
+# Virtual environment
 venv/
-.env
+env/
+ENV/
 
-# Node
-node_modules/
-dist/
-
-# VSCode
+# IDE files
 .vscode/
+.idea/
+
+# Node modules (for frontend)
+node_modules/
+
+# Environment variables
+.env
