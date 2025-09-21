@@ -26,11 +26,8 @@ MODEL2.compile(
 )
 
 origins = [
-    "http://localhost",
     "http://localhost:3000",
     "http://localhost:5173",
-    "https://plant-disease-frontend.vercel.app",
-    "https://plant-disease-frontend.netlify.app",
 ]
 
 app.add_middleware(
