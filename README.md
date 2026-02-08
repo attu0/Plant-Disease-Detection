@@ -2,6 +2,9 @@
 
 A web application that uses machine learning to detect diseases in plant leaves. The system can identify various plant diseases and provide recommendations for treatment.
 
+## Tutorial
+[![Watch the video](video-screenshot.png)](https://drive.google.com/file/d/1xbgAjzyP1HwkUynNzQlb5uf9Lxn83-lv/view?usp=drive_link)
+
 ## Features
 
 - Upload plant leaf images through drag & drop or file selection
